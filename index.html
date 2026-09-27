@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Striver's A2Z Sheet — LeetCode Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="window">
+  <div class="term-bar">
+    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+    <span class="term-title">~/dsa/a2z_tracker.js<span class="blink"></span></span>
+  </div>
+
+  <div class="panel-body">
+    <div class="eyebrow">DSA · Interview Prep · takeuforward.org</div>
+    <h1>Striver's A2Z Sheet <span class="grad">— LeetCode Tracker</span></h1>
+    <p class="sub">
+      Every problem from Striver's A2Z DSA Sheet with a direct <code>leetcode.com</code> match,
+      grouped by topic in the sheet's original order. Check problems off as you solve them,
+      star the ones to revisit, and your progress is saved right in this browser.
+    </p>
+
+    <div class="progress-card">
+      <div class="progress-ring-wrap">
+        <svg width="88" height="88" viewBox="0 0 88 88">
+          <circle cx="44" cy="44" r="38" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+          <circle id="ringFg" cx="44" cy="44" r="38" fill="none" stroke="url(#ringGrad)" stroke-width="8" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00e5ff"/>
+              <stop offset="100%" stop-color="#8a5cff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="pct" id="ringPct">0%</span>
+      </div>
+      <div class="progress-meta">
+        <div class="label">Overall progress</div>
+        <div class="count" id="doneCount">0<span> / 0 solved</span></div>
+      </div>
+      <div class="stat-chips">
+        <div class="chip easy" id="statEasy"></div>
+        <div class="chip medium" id="statMedium"></div>
+        <div class="chip hard" id="statHard"></div>
+        <div class="chip star" id="statStar"></div>
+      </div>
+      <button class="reset-btn" id="resetBtn">Reset progress</button>
+    </div>
+
+    <div class="controls">
+      <div class="controls-inner">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="search" type="text" placeholder="Search problems…" />
+        </div>
+        <div class="pills" id="diffPills">
+          <div class="pill active" data-diff="all">All</div>
+          <div class="pill" data-diff="Easy">Easy</div>
+          <div class="pill" data-diff="Medium">Medium</div>
+          <div class="pill" data-diff="Hard">Hard</div>
+        </div>
+        <div class="pills" id="statusPills">
+          <div class="pill" data-status="starred">★ Starred</div>
+          <div class="pill" data-status="done">✓ Done</div>
+        </div>
+        <select id="topicFilter"><option value="all">All topics</option></select>
+      </div>
+    </div>
+
+    <main id="main">
+      <div class="empty-state" id="emptyState"><span class="big">¯\_(ツ)_/¯</span>No problems match your filters.</div>
+    </main>
+
+    <footer>
+      Source: Striver's A2Z DSA Sheet — takeuforward.org/dsa/strivers-a2z-sheet-learn-dsa-a-to-z<br>
+      Only problems with a direct LeetCode equivalent are listed — GfG-only / language-basics problems from the sheet are omitted.
+      Difficulty tags mirror LeetCode's own labels. Progress is stored locally in this browser only.
+    </footer>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
